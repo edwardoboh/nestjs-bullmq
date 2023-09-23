@@ -19,6 +19,6 @@ COPY package.json yarn.lock ./
 
 RUN yarn install --production
 
-COPY --from=development /usr/src/app/dist .
+COPY --from=development /usr/src/app/dist/ /usr/src/app/dist/
 
-CMD [ "yarn", "start" ]
+CMD [ "node", "./dist/main.js" ]
